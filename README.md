@@ -1,4 +1,4 @@
 nodePad
 =======
 
-A fully node.js notepad
+A fully node.js blog
