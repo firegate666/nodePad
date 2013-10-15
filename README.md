@@ -3,6 +3,9 @@ nodePad
 
 A fully Node.js MongoDB blog following excellent tutorial: http://howtonode.org/express-mongodb
 
+ADDED!: Support for editing old entry blogs and support for removing them!
+
+Persistance datastore: MongoDB
 
 
 Instructions for running locally
