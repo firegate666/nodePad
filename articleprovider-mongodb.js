@@ -57,6 +57,19 @@ ArticleProvider.prototype.addCommentToArticle = function(articleId, comment, cal
   });
 };
 
+ArticleProvider.prototype.update = function(articleId, articles, callback){
+	this.getCollection(function(err, article_collection){
+		if(err) callback(err);
+		else{
+			article_collection.update({	
+				_id: article_collection.db.bson_serializer.ObjectID.createFromHexString(articleId)}, { $set: articles}, function(err, article){
+			if (err) callback(err);
+			else callback(null, article)
+			});
+		}
+	});
+};
+
 ArticleProvider.prototype.save = function(articles, callback) {
     this.getCollection(function(error, article_collection) {
       if( error ) callback(error)

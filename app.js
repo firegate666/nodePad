@@ -65,6 +65,31 @@ app.get('/blog/:id', function(req, res) {
     });
 });
 
+// show edit a blog post
+app.post('/blog/edit', function(req, res) {
+	console.log("MAMAM "+req.param('_id'));
+	articleProvider.findById(req.param('_id'), function(error, article) {
+		res.render('blog_edit',
+		{
+			title: article.title,
+			article: article
+		
+		});
+	});
+});
+
+
+// edit a blog post
+app.post('/blog/save', function(req, res) {
+	
+	articleProvider.update(req.param('_id'), {title: req.param('title'), body: req.param('body') },function(error, article) {
+		res.redirect('/blog/' + req.param('_id'));
+	});
+});
+
+
+
+
 app.post('/blog/addComment', function(req, res) {
     articleProvider.addCommentToArticle(req.param('_id'), {
         person: req.param('person'),

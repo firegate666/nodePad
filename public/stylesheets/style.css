@@ -4,21 +4,26 @@ body {
   text-align: center;
   text-stroke: 1px rgba(255,255,255,0.1);
   color: #555;
+  width: 320px;
+  margin: 0 auto;
 }
 h1,
 h2 {
-  margin: 0;
+  margin: 30px 0 0 0;
   font-size: 22px;
   color: #343434;
 }
 h1 {
   text-shadow: 1px 2px 2px #ddd;
-  font-size: 60px;
+  font-size: 40px;
+}
+a {
+  color: #1ca1a3;
+  text-decoration: none;
 }
 #articles {
   text-align: left;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 0 auto;
   width: 320px;
 }
 #articles .article {
@@ -29,25 +34,54 @@ h1 {
 }
 #articles .article .title {
   font-weight: bold;
-  text-decoration: underline;
-  background-color: #eee;
+  padding-left: 20px;
+  background-color: #d2eced;
 }
-#articles .article .body {
-  background-color: #ffa;
+#articles .article .title input#edit {
+  border: none;
+  background: transparent;
+  float: right;
+  margin-top: 14px;
+  font-size: 10px;
+  color: #555;
+  cursor: pointer;
 }
-.article .created_at {
+#articles .article .title input#delete {
+  float: right;
+  margin-top: 13px;
+  margin-right: 10px;
+  color: #d55b5b;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
+#articles .article .title a {
+  line-height: 40px;
+}
+#articles .article .title .body {
+  background-color: #fff3bf;
+  padding: 20px;
+}
+#content {
+  margin-top: 30px;
+}
+#newpost {
+  width: 320px;
+  margin: 20px auto;
+}
+#edit .article .created_at {
   display: none;
 }
-.article input[type =text] {
+#edit .article input[type =text] {
   width: 490px;
   margin-left: 16px;
 }
-.article input[type =button],
-.article input[type =submit] {
+#edit .article input[type =button],
+#edit .article input[type =submit] {
   text-align: left;
   margin-left: 440px;
 }
-.article textarea {
+#edit .article textarea {
   width: 490px;
   height: 90px;
 }

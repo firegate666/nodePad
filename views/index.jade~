@@ -3,9 +3,19 @@ extends layout
 block content
  h1= title
  #articles
-    - each article in articles
-      div.article
-        div.created_at= article.created_at
-        div.title 
-            a(href="/blog/"+article._id)!= article.title
-        div.body= article.body
+  - each article in articles
+    div.article
+      div.created_at= article.created_at
+      div.title
+        form( method="post", action="/blog/delete")
+          input(name="_id", type="hidden", value=article._id.toHexString())
+          input(id="delete", value="x", type="submit")
+        form( method="get", action="/blog/:mierda/edit")
+          input(name ="_id", type="hidden", value=article._id.toHexString())
+          input(id="edit", value="edit", type="submit")
+        a(href="/blog/"+article._id)!= article.title
+        div.body
+            p= article.body
+          
+ #newpost
+  a(href="/blog/new")!= 'new post'
