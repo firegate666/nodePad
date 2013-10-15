@@ -1,7 +1,7 @@
 nodePad
 =======
 
-A fully node.js blog following excellent tutorial: http://howtonode.org/express-mongodb
+A fully Node.js MongoDB blog following excellent tutorial: http://howtonode.org/express-mongodb
 
 
 
