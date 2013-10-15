@@ -88,6 +88,13 @@ app.post('/blog/save', function(req, res) {
 });
 
 
+app.post('/blog/delete', function(req, res) {
+	
+	articleProvider.delete(req.param('_id'),function(error, article) {
+		res.redirect('/');
+	});
+});
+
 
 
 app.post('/blog/addComment', function(req, res) {

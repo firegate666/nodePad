@@ -55,15 +55,18 @@ a
   width 320px
   margin 20px auto
 #edit
-.article
-  .created_at
-    display none
-  input[type =text]
-    width 490px
-    margin-left 16px
-  input[type =button], input[type =submit]
-    text-align left
-    margin-left 440px
-  textarea
-    width 490px
-    height 90px
+ .article
+   .created_at
+     display none
+   input[type =text]
+     width 490px
+     margin-left 16px
+   input[type =button], input[type =submit]
+     text-align left
+     margin-left 440px
+   textarea
+     width 490px
+     height 90px
+p 
+  width 60px
+

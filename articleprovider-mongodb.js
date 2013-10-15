@@ -70,6 +70,21 @@ ArticleProvider.prototype.update = function(articleId, articles, callback){
 	});
 };
 
+
+ArticleProvider.prototype.delete = function(articleId, callback){
+	this.getCollection(function(err, article_collection){
+		if(err) callback(err);
+		else{
+			article_collection.remove({	
+				_id: article_collection.db.bson_serializer.ObjectID.createFromHexString(articleId)}, function(err, article){
+			if (err) callback(err);
+			else callback(null, article)
+			});
+		}
+	});
+};
+
+
 ArticleProvider.prototype.save = function(articles, callback) {
     this.getCollection(function(error, article_collection) {
       if( error ) callback(error)
