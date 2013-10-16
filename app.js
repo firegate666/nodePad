@@ -80,17 +80,17 @@ app.post('/blog/edit', function(req, res) {
 
 
 // edit a blog post
-app.post('/blog/save', function(req, res) {
+app.put('/blog/:id', function(req, res) {
 	
-	articleProvider.update(req.param('_id'), {title: req.param('title'), body: req.param('body') },function(error, article) {
-		res.redirect('/blog/' + req.param('_id'));
+	articleProvider.update(req.params.id, {title: req.param('title'), body: req.param('body') },function(error, article) {
+		res.redirect('/blog/' + req.params.id);
 	});
 });
 
 
-app.post('/blog/delete', function(req, res) {
+app.del('/blog/:id', function(req, res) {
 	
-	articleProvider.delete(req.param('_id'),function(error, article) {
+	articleProvider.delete(req.params.id,function(error, article) {
 		res.redirect('/');
 	});
 });

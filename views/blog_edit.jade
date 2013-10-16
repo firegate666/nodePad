@@ -3,7 +3,7 @@ extends layout
 
 block content
  h1= title
- form( method="post", action="/blog/save")
+ form( method="post", action="/blog/"+article._id)
    div
        div
            span Title :
@@ -12,5 +12,5 @@ block content
            span Body :
            textarea( name="body", rows=20, id="editArticleBody")= article.body
        div#editArticleSubmit
-           input(type="hidden", name="_id", value=article._id.toHexString())	
+           input(type="hidden", name="_method", value="put")	
            input(type="submit", value="Save me!")

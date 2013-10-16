@@ -7,8 +7,8 @@ block content
     div.article
       div.created_at= article.created_at
       div.title
-        form( method="post", action="/blog/delete")
-          input(name="_id", type="hidden", value=article._id.toHexString())
+        form( method="post", action="/blog/"+article._id)
+          input(name="_method", type="hidden", value="delete")
           input(id="delete", value="x", type="submit")
         form( method="post", action="/blog/edit")
           input(name ="_id", type="hidden", value=article._id.toHexString())
